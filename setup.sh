@@ -16,21 +16,21 @@ Type=Application
 Terminal=true
 Name=gCon
 Icon="$PWD"/icon.png
-Exec="$PWD"/gcon.sh" > ~/Desktop/NOVA.desktop
+Exec="$PWD"/gcon.sh" > ~/Desktop/gCon.desktop
 
 echo "[Desktop Entry]
 Type=Application
 Terminal=true
 Name=gCon
 Icon="$PWD"/icon.png
-Exec="$PWD"/gcon.sh" > ~/.local/share/applications/NOVA.desktop
+Exec="$PWD"/gcon.sh" > ~/.local/share/applications/gCon.desktop
 
 echo "#!/usr/bin/env bash
 
 cd "$PWD"
 source ./venv/bin/activate
-python3 ./gesture-control.py" > ./assistant.sh
+python3 ./gesture-control.py" > ./gcon.sh
 
-chmod +x ./assistant.sh
+chmod +x ./gcon.sh
 
 echo "gCon is installed and ready to launch."

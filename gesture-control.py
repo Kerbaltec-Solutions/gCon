@@ -20,6 +20,7 @@ A = np.array([[1,i]for i in range(-10,0)])
 print(A)
 Ap = np.linalg.pinv(A)
 y = np.array([1,-1])
+w = np.dot(y,Ap)
 
 # map hand position to screen position
 def translate(value, leftMin, leftMax, rightMin, rightMax):
@@ -146,8 +147,7 @@ def get_frames():
           center_history.pop(0)
           # compute linear least squares interpolation of last 10 data points, provides very responsive noise reduction
           b = np.array([[c.x, c.y, c.z] for c in center_history])
-          x = np.dot(Ap,b)
-          avg_center = np.dot(y,x)
+          avg_center = np.dot(w,b)
           print('Center:', avg_center)
           center.x = avg_center[0]
           center.y = avg_center[1]

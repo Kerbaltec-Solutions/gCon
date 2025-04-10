@@ -11,20 +11,6 @@ if [ ! -f "gesture_recognizer.task" ]; then
     wget -q https://storage.googleapis.com/mediapipe-models/gesture_recognizer/gesture_recognizer/float16/1/gesture_recognizer.task
 fi
 
-echo "[Desktop Entry]
-Type=Application
-Terminal=true
-Name=gCon
-Icon="$PWD"/icon.png
-Exec="$PWD"/gcon.sh" > ~/Desktop/gCon.desktop
-
-echo "[Desktop Entry]
-Type=Application
-Terminal=true
-Name=gCon
-Icon="$PWD"/icon.png
-Exec="$PWD"/gcon.sh" > ~/.local/share/applications/gCon.desktop
-
 echo "#!/usr/bin/env bash
 
 cd "$PWD"
